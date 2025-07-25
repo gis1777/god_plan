@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fou de jesus tavel | Découvrez l'Europe et l'Amérique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2a9d8f;
+            --secondary: #e76f51;
+            --dark: #264653;
+            --light: #f8f9fa;
+            --accent: #e9c46a;
+            --text: #333;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --light-bg: #f0f8ff;
+            --europe-blue: #3d5a80;
+            --america-red: #e63946;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn-europe {
+            background: var(--europe-blue);
+        }
+        
+        .btn-europe:hover {
+            background: #2d4570;
+        }
+        
+        .btn-america {
+            background: var(--america-red);
+        }
+        
+        .btn-america:hover {
+            background: #c1121f;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(61,90,128,0.8), rgba(230,57,70,0.8)), url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1120&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        /* Destinations */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.8rem;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 60px;
+        }
+        
+        .destinations {
+            background: var(--white);
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+        
+        .tab-btn {
+            padding: 12px 30px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .card:hover .card-img {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .price {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(to bottom right, #e0f7fa, #f5f5f5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80') center/cover;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .testimonial-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 40px;
+        }
+        
+        .testimonial {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.15;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .client {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .client-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .client-info h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .client-info p {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        .rating {
+            color: var(--accent);
+            margin-top: 5px;
+        }
+        
+        /* Values Section */
+        .values {
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            padding: 30px;
+            border-radius: 15px;
+            background: var(--light-bg);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            background: var(--primary);
+            color: white;
+        }
+        
+        .value-card:hover h3,
+        .value-card:hover p,
+        .value-card:hover .value-icon {
+            color: white;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .value-card p {
+            color: var(--gray);
+            transition: all 0.3s;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(to right, var(--europe-blue), var(--america-red));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: #ddd;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-globe-europe"></i>
+                    <span>Fou de jesus travel</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                    <li><a href="#valeurs">Nos Valeurs</a></li>
+                    <li><a href="#">Circuits</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <a href="#" class="btn">Réserver</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Découvrez l'Europe & l'Amérique</h1>
+            <p>Voyages authentiques à travers les continents qui ont façonné notre monde</p>
+            <div class="hero-btns">
+                <a href="#destinations" class="btn btn-europe">Explorer l'Europe</a>
+                <a href="#destinations" class="btn btn-america">Découvrir l'Amérique</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations -->
+    <section id="destinations" class="section destinations">
+        <div class="container">
+            <h2 class="section-title">Nos Destinations Phares</h2>
+            <p class="section-subtitle">Explorez nos destinations européennes et américaines les plus prisées</p>
+            
+            <div class="tabs">
+                <button class="tab-btn active">Toutes</button>
+                <button class="tab-btn">Europe</button>
+                <button class="tab-btn">Amérique</button>
+            </div>
+            
+            <div class="cards">
+                <!-- Europe -->
+                <div class="card">
+                    <div class="card-badge">Europe</div>
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="Paris" class="card-img">
+                    <div class="card-content">
+                        <h3>Paris, France</h3>
+                        <p>La Ville Lumière avec ses monuments emblématiques, sa gastronomie et son art de vivre unique.</p>
+                        <span class="price">À partir de 2599€</span>
+                        <a href="#" class="btn btn-europe">Découvrir</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-badge">Europe</div>
+                    <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Santorini" class="card-img">
+                    <div class="card-content">
+                        <h3>Santorini, Grèce</h3>
+                        <p>Île paradisiaque aux maisons blanches et bleues, couchers de soleil inoubliables et plages volcaniques.</p>
+                        <span class="price">À partir de 1799€</span>
+                        <a href="#" class="btn btn-europe">Découvrir</a>
+                    </div>
+                </div>
+                
+                <!-- Amérique -->
+                <div class="card">
+                    <div class="card-badge">Amérique</div>
+                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="New York" class="card-img">
+                    <div class="card-content">
+                        <h3>New York, USA</h3>
+                        <p>La ville qui ne dort jamais, avec ses gratte-ciel iconiques, sa culture vibrante et son énergie unique.</p>
+                        <span class="price">À partir de 2899€</span>
+                        <a href="#" class="btn btn-america">Découvrir</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-badge">Amérique</div>
+                    <img src="https://images.unsplash.com/photo-1587330979470-3595ac045ab0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Rio de Janeiro" class="card-img">
+                    <div class="card-content">
+                        <h3>Rio de Janeiro, Brésil</h3>
+                        <p>Ville festive entre mer et montagne, célèbre pour son carnaval, ses plages et le Christ Rédempteur.</p>
+                        <span class="price">À partir de 1500€</span>
+                        <a href="#" class="btn btn-america">Découvrir</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-badge">Europe</div>
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80" alt="Barcelone" class="card-img">
+                    <div class="card-content">
+                        <h3>Barcelone, Espagne</h3>
+                        <p>Vibrante ville méditerranéenne avec son architecture Gaudí, ses plages et sa vie nocturne animée.</p>
+                        <span class="price">À partir de 1549€</span>
+                        <a href="#" class="btn btn-europe">Découvrir</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-badge">Amérique</div>
+                    <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Québec" class="card-img">
+                    <div class="card-content">
+                        <h3>Québec, Canada</h3>
+                        <p>Charme européen en Amérique avec sa vieille ville historique, sa gastronomie et son ambiance unique.</p>
+                        <span class="price">À partir de 1899€</span>
+                        <a href="#" class="btn btn-america">Découvrir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="temoignages" class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">Témoignages de Voyageurs</h2>
+            <p class="section-subtitle">Découvrez les expériences authentiques de nos voyageurs en Europe et en Amérique</p>
+            
+            <div class="testimonial-grid">
+                <!-- Témoignage 1 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Notre voyage à Paris avec Fou de jeuss a été magique. L'organisation était impeccable et nous avons découvert des coins secrets que seuls les locaux connaissent. Une expérience vraiment authentique!"</p>
+                        <div class="client">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Sophie Dubois" class="client-img">
+                            <div class="client-info">
+                                <h4>Sophie Dubois</h4>
+                                <p>Voyage à Paris, 2023</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 2 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"En tant que voyageur blanche, je me sentais parfois hésitant à visiter certains endroits. L'équipe fou de jesus travel a créé un itinéraire parfait qui m'a fait sentir le bienvenu partout à New York."</p>
+                        <div class="client">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Thomas Diallo" class="client-img">
+                            <div class="client-info">
+                                <h4>Thomas Diallo</h4>
+                                <p>Séjour à New York, 2023</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 3 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Le circuit en Italie organisé par fou de jesus travel a dépassé toutes nos attentes. Des guides locaux passionnés et des expériences culinaires authentiques qui ont ravi toute notre famille."</p>
+                        <div class="client">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Marc Lefebvre" class="client-img">
+                            <div class="client-info">
+                                <h4>Marc Lefebvre</h4>
+                                <p>Circuit en Italie, 2022</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 4 -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Notre voyage au Brésil avec fou de jesus travel a été une révélation. L'accent mis sur la culture afro-brésilienne et les communautés locales a rendu cette expérience profondément enrichissante."</p>
+                        <div class="client">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Aïssatou Ndiaye" class="client-img">
+                            <div class="client-info">
+                                <h4>Aïssatou Ndiaye</h4>
+                                <p>Aventure brésilienne, 2023</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section id="valeurs" class="section values">
+        <div class="container">
+            <h2 class="section-title">Notre Philosophie de Voyage</h2>
+            <p class="section-subtitle">Ce qui rend nos expériences européennes et américaines uniques</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Voyage Responsable</h3>
+                    <p>Nous privilégions les expériences qui respectent les populations locales et l'environnement.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Diversité Culturelle</h3>
+                    <p>Nous célébrons la richesse des cultures européennes et américaines dans toute leur diversité.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Communautés Locales</h3>
+                    <p>Nos voyages soutiennent les économies locales et créent des rencontres authentiques.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Hors des Sentiers Battus</h3>
+                    <p>Nous vous emmenons découvrir des lieux authentiques loin du tourisme de masse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Inspirations de voyage</h2>
+            <p>Recevez nos offres exclusives pour l'Europe et l'Amérique, conseils et inspirations directement dans votre boîte mail</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="foudejesusbusinessrdv@gmail.com" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Fou de jesus travel</h3>
+                    <p>Spécialistes des voyages authentiques en Europe et en Amérique depuis 2010.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/v/1KjaGTRHU7/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCIU5-ZwkoImjY56oqJmTCqg"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Europe de l'Ouest</a></li>
+                        <li><a href="#">Europe de l'Est</a></li>
+                        <li><a href="#">Amérique du Nord</a></li>
+                        <li><a href="#">Amérique du Sud</a></li>
+                        <li><a href="#">Caraïbes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Nos Voyages</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Voyages en Famille</a></li>
+                        <li><a href="#">Séjours Romantiques</a></li>
+                        <li><a href="#">Aventure & Nature</a></li>
+                        <li><a href="#">Voyages Culturels</a></li>
+                        <li><a href="#">Croisières Fluviales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> popo kabaka A2bis, kalamu</li>
+                        <li><i class="fas fa-phone"></i> +243 847 509 788</li>
+                        <li><i class="fas fa-envelope"></i>foudejesusbusinessrdv@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Lun-Ven: 7h-18h, Sam: 08h-16h</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Fou de jesus travel. Tous droits réservés. | Conçu avec <i class="fas fa-heart" style="color: var(--accent);"></i> pour les passionnés de voyages</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation pour les boutons d'onglet
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Retirer la classe active de tous les boutons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Ajouter la classe active au bouton cliqué
+                    this.classList.add('active');
+                    
+                    // Ici, vous pourriez ajouter une logique pour filtrer les destinations
+                });
+            });
+            
+            // Animation au défilement
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer les sections
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
